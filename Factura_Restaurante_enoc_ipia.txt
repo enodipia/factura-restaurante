@@ -1,0 +1,44 @@
+Algoritmo Factura_Restaurante
+    // Declaramos las variables///
+       Definir nombre Como Cadena
+              Definir montoCompra, descuento, montoDescuento, totalPagar Como Real
+    
+    // Pedimos los datos al usuario/////
+    Escribir "Ingrese su nombre: "
+    Leer nombre
+    
+    Escribir "Ingrese el total de su compra: "
+    Leer montoCompra
+    
+    // Inicializamos el descuento en 0//
+    descuento <- 0
+    
+    // Determinamos el porcentaje de descuento según el monto de compra//
+    Si montoCompra >= 200000           Entonces
+        descuento <- 0.15 // 15% de descuento//
+    Sino 
+        Si montoCompra >= 50000   Entonces
+            descuento <- 0.02 // 2% de descuento//
+        Sino 
+            Si montoCompra >= 20000   Entonces
+                descuento <- 0.015 // 1.5% de descuento//
+            FinSi
+        FinSi
+    FinSi
+    
+    // Calculamos el valor del descuento y el total a pagar//
+    montoDescuento <- montoCompra * descuento
+    totalPagar <- montoCompra - montoDescuento
+    
+    // Mostramos la factura al cliente//
+    Escribir "==================================="
+    Escribir "        FACTURA DE COMPRA         "
+    Escribir "==================================="
+    Escribir "Cliente: ", nombre
+    Escribir "Total de la compra: $", montoCompra
+    Escribir "Descuento aplicado: $", montoDescuento
+    Escribir "Total a pagar: $", totalPagar
+    Escribir "==================================="
+    Escribir "Gracias por su compra. ¡Vuelva pronto!"
+FinAlgoritmo
+
